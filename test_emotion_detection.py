@@ -4,7 +4,7 @@ from EmotionDetection import emotion_detector
 
 class TestEmotionDetection(unittest.TestCase):
 
-    @staticmethod    
+    @staticmethod
     def call_dominant(text):
         return emotion_detector(text)["dominant_emotion"]
 
