@@ -1,6 +1,4 @@
 import requests
-import json
-
 
 def emotion_detector(text_to_analyse):
     url = "https://sn-watson-emotion.labs.skills.network/v1/watson.runtime.nlp.v1/NlpService/EmotionPredict"
@@ -17,6 +15,5 @@ def emotion_detector(text_to_analyse):
     }
 
     response = requests.post(url, json=body_json, headers=header)
-    # formatted_response = json.loads(response.text)
 
     return response.text
