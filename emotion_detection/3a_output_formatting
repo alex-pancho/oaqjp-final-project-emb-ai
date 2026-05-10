@@ -45,18 +45,3 @@ def emotion_detector(text_to_analyze):
     emotion_predictions["dominant_emotion"] = dominant_emotion
 
     return emotion_predictions
-
-
-if __name__ == "__main__":
-    emo_dict = dict(
-        joy="Great to meet @BrightonChoir @MJParanzino tonight. What a lively and enthusiastic bunch! Look forward to working with you again!",
-        fear="She chuckles, shaking her head. 'No...I just have a really vivid imagination, I guess. It happens when you meet someone",
-        anger="Losing the will 2 live with @virginmedia business bb gone down on hold for 23 minutes &amp; whoever picked up cut me off",
-        sadness="it's still not sunk in that im seeing joe next month, im so grateful and excited shit",
-        joy_2="Sometimes I watch shitty tv to reinforce never giving up cuz if something is that fucking awful on tv, I still stand a chance.",
-        fear_2="#Everything you've ever wanted awaits you on the other side of #fear . #IfIWasTheOppositeSex #AskAMan",
-        anger_2="@SkyUK what a joke!! Cut our internet off early 'by mistake' and then don't reinstate it when we no longer need an engineer",
-    )
-    for emo, text in emo_dict.items():
-        emotion_predictions = emotion_detector(text)
-        print(emo, emotion_predictions)
