@@ -8,12 +8,36 @@ class TestEmotionDetection(unittest.TestCase):
     def call_dominant(text):
         return emotion_detector(text)["dominant_emotion"]
 
+    def test_emotion_01(self):
+        actual = self.call_dominant("I am glad this happened")
+        expected = "joy"
+        self.assertEqual(actual, expected)
+    
+    def test_emotion_02(self):
+        actual = self.call_dominant("I am really mad about this")
+        expected = "anger"
+        self.assertEqual(actual, expected)
+    
+    def test_emotion_03(self):
+        actual = self.call_dominant("I feel disgusted just hearing about this")
+        expected = "disgust"
+        self.assertEqual(actual, expected)
+    
+    def test_emotion_04(self):
+        actual = self.call_dominant("I am so sad about this")
+        expected = "sadness"
+        self.assertEqual(actual, expected)
 
-    def test_emotion_detection(self):
-        self.assertEqual(
-            self.call_dominant("I am glad this happened"),
-            "joy"
-        )
+    def test_emotion_05(self):
+        actual = self.call_dominant("I am really afraid that this will happen")
+        expected = "fear"
+        self.assertEqual(actual, expected)
+
+    def test_emotion_06(self):
+        actual = self.call_dominant("Great to meet @BrightonChoir @MJParanzino tonight. What a lively and enthusiastic bunch! Look forward to working with you again!")
+        expected = "joy"
+        self.assertEqual(actual, expected)
+
 
 if __name__ == "__main__":
     unittest.main()
