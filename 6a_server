@@ -15,9 +15,6 @@ def sent_analyzer():
 
     response = emotion_detector(text_to_analyze)
 
-    if response.get("dominant_emotion") is None:
-        return "Invalid text! Please try again!"
-
     anger = response.get('anger', "not found")
     disgust = response.get('disgust', "not found")
     fear = response.get('fear', "not found")

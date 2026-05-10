@@ -36,6 +36,7 @@ def emotion_detector(text_to_analyze):
 
     if "emotionPredictions" not in formatted_response:
         return {"error": '"emotionPredictions" not in formatted_response'}
+    
 
     emotion_predictions = formatted_response["emotionPredictions"][0]["emotion"]
 
