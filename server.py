@@ -18,12 +18,12 @@ def sent_analyzer():
     if response.get("dominant_emotion") is None:
         return "Invalid text! Please try again!"
 
-    anger = response.get('anger')
-    disgust = response.get('disgust')
-    fear = response.get('fear')
-    joy = response.get('joy')
-    sadness = response.get('sadness')
-    domina = response.get('dominant_emotion')
+    anger = response.get("anger")
+    disgust = response.get("disgust")
+    fear = response.get("fear")
+    joy = response.get("joy")
+    sadness = response.get("sadness")
+    domina = response.get("dominant_emotion")
 
     formatted_response = (
         f"For the given statement, the system response is "
