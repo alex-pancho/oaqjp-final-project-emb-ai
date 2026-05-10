@@ -4,9 +4,14 @@ from EmotionDetection import emotion_detector
 
 class TestEmotionDetection(unittest.TestCase):
 
+    @staticmethod    
+    def call_dominant(text):
+        return emotion_detector(text)["dominant_emotion"]
+
+
     def test_emotion_detection(self):
         self.assertEqual(
-            emotion_detector("I am glad this happened")["dominant_emotion"],
+            self.call_dominant("I am glad this happened"),
             "joy"
         )
 
